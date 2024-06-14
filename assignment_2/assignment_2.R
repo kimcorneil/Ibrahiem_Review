@@ -2,16 +2,19 @@
 #'Ibrahim Emam
 #'R version: 4.4.0
 
-#get input from user
+#get input from user, save as a character string
 number_string <- readline(prompt = "Enter a three digit positive number: ")
 
 #make a numeric object containing the user's input
-number_numeric <- as.numeric(number_string)
+number_numeric <- as.numeric(number_string) #Note: maybe supress warning since we check for NAs anyway?
 
-#'if the user did not provide input or the input was not numeric, print an error
-#'message and quit
-if(is.na(number_numeric) | number_numeric > 999 | number_numeric %% 1 != 0 | number_numeric < 0) {
-  stop("Error: input must be a whole number with 3 digits.")
+#ensure the user's input is numeric, otherwise quit the R script
+if(is.na(number_string)) {
+  stop("input must be numeric.")
+} else if(number_numeric > 999 | number_numeric %% 1 != 0 | number_numeric < 0) {
+  stop("input must be a positive whole number with 3 digits.")
+} else {
+  #NOTE learned from class: should start with the math below under the first if statement
 }
 
 #split the number into its individual digits, then change from list to vector format
