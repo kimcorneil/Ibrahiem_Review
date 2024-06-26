@@ -2,6 +2,17 @@
 #'Ibrahim Emam
 #'R version: 4.4.0
 
+#FUNCTIONS DEFINED:
+
+guess_type <- function() {
+  repeat {
+    input <- tolower(readline("Would you like to guess the word or a letter? (word/letter): "))
+    if (input == "word" | input == "letter") {
+      return(input)
+    }
+  }
+}
+
 #read txt file containing words into a vector
 words <- readLines("words.txt")
 
@@ -28,6 +39,12 @@ for (i in 1:attempts_allowed) {
   #print the user's current answer (with blanks for characters not guessed)
   cat(user_answer, sep = " ", "\n")
   
-  #prompt the user to determine if they will guess a character or the whole word
-  
+  #determine if the user wants to guess the whole word or just one letter
+  if (guess_type() == "word") {
+    #the user wants to guess the entire word
+    print("You picked WORD!")
+  } else {
+    #the user wants to guess one letter
+    print("You picked LETTER!")
+  }
 }
