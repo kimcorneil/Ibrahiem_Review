@@ -2,6 +2,12 @@
 #'Ibrahim Emam
 #'R version: 4.4.0
 
+## Two hashtags is me (reviewer)
+
+## Reviewer comments: 
+##' overall worked great. I liked the option to enter a word or a letter. 
+##' Good job explaining where to look and what you did at the beginning with NOTES
+
 ###########
 ## NOTES ##
 ###########
